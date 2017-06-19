@@ -16,13 +16,18 @@
   ],
   "scripts": {
     "prepublish": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./scripts/test.sh",
+    "lint": "./scripts/lint.sh",
+    "flow": "flow status",
+    "flow-check": "flow check"
   },
   "devDependencies": {
     "json-loader": "^0.5.4",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.14",
-    "css-loader": "^0.23.1"
+    "css-loader": "^0.23.1",
+    "flow-bin": "^0.21.0",
+    "jsxhint": "git://github.com/strml/JSXHint.git"
   },
   "dependencies": {
     "jupyter-js-widgets": "^2.1.4",

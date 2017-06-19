@@ -1,3 +1,5 @@
+/* @flow */
+
 // Entry point for the notebook bundle containing custom model definitions.
 //
 // Setup notebook base URL
@@ -6,8 +8,6 @@
 // url for the notebook is not known at build time and is therefore computed
 // dynamically.
 __webpack_public_path__ = document.querySelector('body').getAttribute('data-base-url') + 'nbextensions/genomic-viz/';
-
-// pileup styles
 
 // Export widget models and views, and the npm package version number.
 module.exports = require('./reads.js');
