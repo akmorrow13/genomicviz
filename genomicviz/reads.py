@@ -1,7 +1,6 @@
 import ipywidgets as widgets
 from traitlets import Unicode
 
-
 @widgets.register('genomicviz.Reads')
 class Reads(widgets.DOMWidget):
     """"""
@@ -12,3 +11,4 @@ class Reads(widgets.DOMWidget):
     _view_module_version = Unicode('^0.1.0').tag(sync=True)
     _model_module_version = Unicode('^0.1.0').tag(sync=True)
     json = Unicode('{}').tag(sync=True)
+    build = Unicode('hg19').tag(sync=True)

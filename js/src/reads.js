@@ -3,8 +3,10 @@
 var widgets = require('jupyter-js-widgets');
 var _ = require('underscore');
 var pileup = require('pileup');
+var utils = require("./utils");
 
 require('pileup/style/pileup.css');
+
 
 // Custom Model. Custom widgets models must at least provide default values
 // for model attributes, including
@@ -29,7 +31,8 @@ var ReadsModel = widgets.DOMWidgetModel.extend({
         _view_module : 'genomic-viz',
         _model_module_version : '0.1.0',
         _view_module_version : '0.1.0',
-        json : '{}'
+        json : '{}',
+        build: 'hg19'
     })
 });
 
@@ -39,6 +42,7 @@ var ReadsView = widgets.DOMWidgetView.extend({
     render: function() {
         this.json_changed();
         this.model.on('change:json', this.json_changed, this);
+        this.model.on('change:build', this.json_changed, this);
     },
 
     json_changed: function() {
@@ -49,7 +53,7 @@ var ReadsView = widgets.DOMWidgetView.extend({
             viz: pileup.viz.genome(),
             isReference: true,
             data: pileup.formats.twoBit({
-              url: 'http://www.biodalliance.org/datasets/hg19.2bit'
+              url: utils.genomeBuilds[this.model.get('build')]
             }),
             name: 'Reference'
           },
