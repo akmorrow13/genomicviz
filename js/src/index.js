@@ -9,6 +9,9 @@
 // dynamically.
 __webpack_public_path__ = document.querySelector('body').getAttribute('data-base-url') + 'nbextensions/genomic-viz/';
 
+require("../css/genomicviz.css");
+require('pileup/style/pileup.css');
+
 // Export widget models and views, and the npm package version number.
 module.exports = require('./reads.js');
 module.exports['version'] = require('../package.json').version;

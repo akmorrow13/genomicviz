@@ -5,7 +5,6 @@ var _ = require('underscore');
 var pileup = require('pileup');
 var utils = require("./utils");
 
-require('pileup/style/pileup.css');
 
 
 // Custom Model. Custom widgets models must at least provide default values
@@ -32,7 +31,10 @@ var ReadsModel = widgets.DOMWidgetModel.extend({
         _model_module_version : '0.1.0',
         _view_module_version : '0.1.0',
         json : '{}',
-        build: 'hg19'
+        build: 'hg19',
+        contig: 'chr1',
+        start: 1,
+        stop: 50
     })
 });
 
@@ -63,12 +65,12 @@ var ReadsView = widgets.DOMWidgetView.extend({
           },
           {
             viz: pileup.viz.pileup(),
+            cssClass: 'reads',
             data: pileup.formats.json(this.model.get('json'))
           }
       ];
 
-      // TODO: pass as parameter
-      var range = {contig: 'chr17', start: 7512284, stop: 7512644};
+      var range = {contig: this.model.get('contig'), start: this.model.get('start'), stop: this.model.get('stop')};
 
       var p = pileup.create(this.el, {
         range: range,
