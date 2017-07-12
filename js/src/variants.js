@@ -5,10 +5,11 @@ var _ = require('underscore');
 var pileup = require('pileup');
 var utils = require("./utils");
 
-var ReadsModel = widgets.DOMWidgetModel.extend({
+
+var VariantModel = widgets.DOMWidgetModel.extend({
     defaults: _.extend(_.result(this, 'widgets.DOMWidgetModel.prototype.defaults'), {
-        _model_name : 'ReadsModel',
-        _view_name : 'ReadsView',
+        _model_name : 'VariantModel',
+        _view_name : 'VariantView',
         _model_module : 'genomic-viz',
         _view_module : 'genomic-viz',
         _model_module_version : '0.1.0',
@@ -23,7 +24,7 @@ var ReadsModel = widgets.DOMWidgetModel.extend({
 
 
 // Custom View. Renders the widget model.
-var ReadsView = widgets.DOMWidgetView.extend({
+var VariantView = widgets.DOMWidgetView.extend({
     render: function() {
         this.json_changed();
         this.model.on('change:json', this.json_changed, this);
@@ -47,9 +48,10 @@ var ReadsView = widgets.DOMWidgetView.extend({
             name: 'Scale'
           },
           {
-            viz: pileup.viz.pileup(),
-            cssClass: 'reads',
-            data: pileup.formats.alignmentJson(this.model.get('json'))
+            viz: pileup.viz.variants(),
+            cssClass: 'variants',
+            data: pileup.formats.variantJson(this.model.get('json')),
+            name: 'Variants'
           }
       ];
 
@@ -64,6 +66,6 @@ var ReadsView = widgets.DOMWidgetView.extend({
 
 
 module.exports = {
-    ReadsModel : ReadsModel,
-    ReadsView : ReadsView
+    VariantModel : VariantModel,
+    VariantView : VariantView
 };

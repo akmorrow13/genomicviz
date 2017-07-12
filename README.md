@@ -29,7 +29,7 @@ Navigate to genomic-viz:
     $ cd js/
     $ mkdir node_modules
     $ npm install --save <path_to_pileup>
-
+    $ cd ..
     $ pip install -e .
     $ jupyter nbextension install --py --symlink --sys-prefix genomicviz
     $ jupyter nbextension enable --py --sys-prefix genomicviz
@@ -37,11 +37,11 @@ Navigate to genomic-viz:
 
 After pileup.js is installed once, you can just run the following for development:
 
-  $ cd genomicviz
-  $ rm -r genomicviz/static/
-  $ pip install -e .
-  $ jupyter nbextension install --py --symlink --sys-prefix genomicviz
-  $ jupyter nbextension enable --py --sys-prefix genomicviz
+    $ cd genomicviz
+    $ rm -r genomicviz/static/
+    $ pip install -e .
+    $ jupyter nbextension install --py --symlink --sys-prefix genomicviz
+    $ jupyter nbextension enable --py --sys-prefix genomicviz
 
 For running examples:
 

@@ -13,5 +13,23 @@ require("../css/genomicviz.css");
 require('pileup/style/pileup.css');
 
 // Export widget models and views, and the npm package version number.
-module.exports = require('./reads.js');
+module.exports = {};
+
+var loadedModules = [
+    require('./reads'),
+    require('./features'),
+    require('./variants')
+];
+
+for (var i in loadedModules) {
+    if (loadedModules.hasOwnProperty(i)) {
+        var loadedModule = loadedModules[i];
+        for (var target_name in loadedModule) {
+            if (loadedModule.hasOwnProperty(target_name)) {
+                module.exports[target_name] = loadedModule[target_name];
+            }
+        }
+    }
+}
+
 module.exports['version'] = require('../package.json').version;
