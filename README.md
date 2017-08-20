@@ -52,5 +52,5 @@ For running examples:
 
 For javascript development type checking:
 
-  $ cd js
-  $ npm run test
+    $ cd js
+    $ npm run test
