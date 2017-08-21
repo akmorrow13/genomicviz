@@ -8,6 +8,6 @@ def _jupyter_nbextension_paths():
     return [{
         'section': 'notebook',
         'src': 'static',
-        'dest': 'genomic-viz',
-        'require': 'genomic-viz/extension'
+        'dest': 'genomicviz',
+        'require': 'genomicviz/extension'
     }]
