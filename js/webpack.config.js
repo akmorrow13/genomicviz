@@ -1,3 +1,4 @@
+var path = require('path');
 var version = require('./package.json').version;
 
 // Custom webpack loaders are generally the same for all webpack bundles, hence
@@ -39,9 +40,9 @@ module.exports = [
         module: {
             loaders: loaders
         },
-        externals: ['jupyter-js-widgets']
+        externals: ['@jupyter-widgets/base']
     },
-    {// Embeddable genomic-viz bundle
+    {// Embeddable genomicviz bundle
      //
      // This bundle is generally almost identical to the notebook bundle
      // containing the custom widget views and models.
@@ -60,12 +61,12 @@ module.exports = [
             filename: 'index.js',
             path: './dist/',
             libraryTarget: 'amd',
-            publicPath: 'https://unpkg.com/genomic-viz@' + version + '/dist/'
+            publicPath: 'https://unpkg.com/genomicviz@' + version + '/dist/'
         },
         devtool: 'source-map',
         module: {
             loaders: loaders
         },
-        externals: ['jupyter-js-widgets']
+        externals: ['@jupyter-widgets/base']
     }
 ];

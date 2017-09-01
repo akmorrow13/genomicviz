@@ -10,7 +10,7 @@ git add and git commit
 git push
 git push --tags
 
-- To release a new version of genomic-viz on NPM:
+- To release a new version of genomicviz on NPM:
 
 # nuke the  `dist` and `node_modules`
 git clean -fdx

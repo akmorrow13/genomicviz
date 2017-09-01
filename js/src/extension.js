@@ -9,8 +9,7 @@ if (window.require) {
     window.require.config({
         map: {
             "*" : {
-                "genomic-viz": "nbextensions/genomic-viz/index",
-                "jupyter-js-widgets": "nbextensions/jupyter-js-widgets/extension"
+                "genomicviz": "nbextensions/genomicviz/index"
             }
         }
     });

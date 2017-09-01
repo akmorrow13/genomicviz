@@ -1,12 +1,12 @@
 {
-  "name": "genomic-viz",
+  "name": "genomicviz",
   "version": "0.1.0",
   "description": "genomicviz",
   "author": "Alyssa Morrow",
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/akmorrow13/genomic-viz.git"
+    "url": "https://github.com/akmorrow13/genomicviz.git"
   },
   "keywords": [
     "jupyter",
@@ -15,6 +15,7 @@
     "ipywidgets"
   ],
   "scripts": {
+    "clean": "rimraf dist/",
     "prepublish": "webpack",
     "test": "./scripts/test.sh",
     "lint": "./scripts/lint.sh",
@@ -22,6 +23,7 @@
     "flow-check": "flow check"
   },
   "devDependencies": {
+    "rimraf": "^2.6.1",
     "json-loader": "^0.5.4",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.14",
@@ -30,8 +32,8 @@
     "jsxhint": "git://github.com/strml/JSXHint.git"
   },
   "dependencies": {
-    "jupyter-js-widgets": "^2.1.4",
-    "pileup": "^0.6.9",
+    "@jupyter-widgets/base": "^1.0.0",
+    "pileup": "file:///Users/akmorrow/hammerlab/pileup.js",
     "underscore": "^1.8.3"
   }
 }

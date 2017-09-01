@@ -122,7 +122,7 @@ setup_args = {
     'long_description': LONG_DESCRIPTION,
     'include_package_data': True,
     'data_files': [
-        ('share/jupyter/nbextensions/genomic-viz', [
+        ('share/jupyter/nbextensions/genomicviz', [
             'genomicviz/static/extension.js',
             'genomicviz/static/index.js',
             'genomicviz/static/index.js.map',

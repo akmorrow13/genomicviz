@@ -1,16 +1,16 @@
 /* @flow */
 
-var widgets = require('jupyter-js-widgets');
+var widgets = require('@jupyter-widgets/base');
 var _ = require('underscore');
 var pileup = require('pileup');
 var utils = require("./utils");
 
 var ReadsModel = widgets.DOMWidgetModel.extend({
-    defaults: _.extend(_.result(this, 'widgets.DOMWidgetModel.prototype.defaults'), {
+    defaults: _.extend(widgets.DOMWidgetModel.prototype.defaults(), {
         _model_name : 'ReadsModel',
         _view_name : 'ReadsView',
-        _model_module : 'genomic-viz',
-        _view_module : 'genomic-viz',
+        _model_module : 'genomicviz',
+        _view_module : 'genomicviz',
         _model_module_version : '0.1.0',
         _view_module_version : '0.1.0',
         json : '{}',

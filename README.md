@@ -1,4 +1,4 @@
-genomic-viz
+genomicviz
 ===============================
 
 genomicviz
@@ -24,7 +24,7 @@ Genomicviz uses a version of pileup.js not yet in npm. To install the latest ver
     $ cd pileup.js
     $ npm run build
 
-Navigate to genomic-viz:
+Navigate to genomicviz:
 
     $ cd js/
     $ mkdir node_modules

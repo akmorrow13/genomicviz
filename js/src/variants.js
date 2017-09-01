@@ -1,6 +1,6 @@
 /* @flow */
 
-var widgets = require('jupyter-js-widgets');
+var widgets = require('@jupyter-widgets/base');
 var _ = require('underscore');
 var pileup = require('pileup');
 var utils = require("./utils");
@@ -10,8 +10,8 @@ var VariantModel = widgets.DOMWidgetModel.extend({
     defaults: _.extend(_.result(this, 'widgets.DOMWidgetModel.prototype.defaults'), {
         _model_name : 'VariantModel',
         _view_name : 'VariantView',
-        _model_module : 'genomic-viz',
-        _view_module : 'genomic-viz',
+        _model_module : 'genomicviz',
+        _view_module : 'genomicviz',
         _model_module_version : '0.1.0',
         _view_module_version : '0.1.0',
         json : '{}',
